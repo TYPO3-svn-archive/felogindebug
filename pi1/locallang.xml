@@ -3,11 +3,29 @@
 	<meta type="array">
 		<type>module</type>
 		<description>Language labels for plugin &quot;tx_felogindebug_pi1&quot;</description>
+		<labelContext type="array">
+		</labelContext>
 	</meta>
 	<data type="array">
 		<languageKey index="default" type="array">
+			<label index="label_clickHere">If you are experiencing problems with your login, please click here.</label>
+			<label index="label_debugInformation">Please copy the information below and e-mail it to the site's administrator.</label>
 		</languageKey>
 		<languageKey index="de" type="array">
+			<label index="label_clickHere">Wenn es Probleme mit Ihrem Login gibt, klicken Sie bitte hier.</label>
+			<label index="label_debugInformation">Bitte kopieren Sie diese Daten und mailen Sie sie an den Administrator dieser Site.</label>
 		</languageKey>
 	</data>
+	<orig_hash type="array">
+		<languageKey index="de" type="array">
+			<label index="label_clickHere" type="integer">151011615</label>
+			<label index="label_debugInformation" type="integer">192215042</label>
+		</languageKey>
+	</orig_hash>
+	<orig_text type="array">
+		<languageKey index="de" type="array">
+			<label index="label_clickHere">If you are experiencing problems with your login, please click here.</label>
+			<label index="label_debugInformation">Please copy the information below and e-mail it to the site's administrator.</label>
+		</languageKey>
+	</orig_text>
 </T3locallang>
