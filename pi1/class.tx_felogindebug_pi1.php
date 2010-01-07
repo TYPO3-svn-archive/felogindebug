@@ -73,11 +73,55 @@ class tx_felogindebug_pi1 extends tx_oelib_templatehelper {
 			'<a href="#" onclick="document.getElementById(\'tx_felogindebug_pi1-debugbox\').style.display=\'block\';return false;">' .
 			$this->translate('label_clickHere') . '</a></p>' .
 			'<div id="tx_felogindebug_pi1-debugbox" style="display: none; background: #ffc; padding: .8em;">' .
-			'<p>' . $this->translate('label_debugInformation') . '</p>';
+			'<p>' . $this->translate('label_debugInformation') . '</p>' .
+			'<table summary=""><tbody>' .
+			$this->createRow('Timestamp', date('Y-m-d H:i:s', mktime())) .
+			$this->createRow('User Agent', $_SERVER['HTTP_USER_AGENT']) .
+			$this->createRow('Remote IP', $_SERVER['REMOTE_ADDR']) .
+			$this->createRow('Request URI', $_SERVER['REQUEST_URI']) .
+			$this->createRow('$TSFE->id', $GLOBALS['TSFE']->id) .
+			$this->createRow('$TSFE->loginUser', $GLOBALS['TSFE']->loginUser) .
+			$this->createRow('$TSFE->gr_list', $GLOBALS['TSFE']->gr_list) .
+			$this->createRow(
+				'$TSFE->fe_user->forceSetCookie',
+				intval($GLOBALS['TSFE']->fe_user->forceSetCookie)
+			) .
+			$this->createRow(
+				'$TSFE->fe_user->dontSetCookie',
+				intval($GLOBALS['TSFE']->fe_user->dontSetCookie)
+			) .
+			$this->createRow('Cookie[PHPSESSID]', $_COOKIE['PHPSESSID']) .
+			$this->createRow('Cookie[fe_typo_user]', $_COOKIE['fe_typo_user']);
 
-		$result .= '</div>';
+		$isLoggedIn = tx_oelib_FrontEndLoginManager::getInstance()->isLoggedIn();
+		$result .= $this->createRow(
+			'tx_oelib_FrontEndLoginManager::isLoggedIn()',
+			intval($isLoggedIn)
+		);
+
+		if ($isLoggedIn) {
+			$result .= $this->createRow(
+				'FE User UID',
+				tx_oelib_FrontEndLoginManager::getLoggedInUser()->getUid()
+			);
+		}
+
+		$result .= '</tbody></table></div>';
 
 		return $this->pi_wrapInBaseClass($result);
+	}
+
+	/**
+	 * Creates a list row for the debug data.
+	 *
+	 * @param string $label the label for the row
+	 * @param string $data the data for the row
+	 *
+	 * @return the HTML row with the label and data htmlspecialchared
+	 */
+	protected function createRow($label, $data) {
+		return '<tr><th>' . htmlspecialchars($label) . '</th><td>' .
+			htmlspecialchars($data) . '</td></tr>';
 	}
 }
 
