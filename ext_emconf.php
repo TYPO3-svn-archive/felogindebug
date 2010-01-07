@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "felogindebug".
 #
-# Auto generated 07-01-2010 14:23
+# Auto generated 07-01-2010 14:33
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -26,20 +26,24 @@ $EM_CONF[$_EXTKEY] = array(
 	'uploadfolder' => 0,
 	'createDirs' => '',
 	'modify_tables' => '',
-	'clearCacheOnLoad' => 0,
+	'clearCacheOnLoad' => 1,
 	'lockType' => '',
-	'author_company' => '',
-	'version' => '0.0.0',
+	'author_company' => 'oliverklee.de',
+	'version' => '0.1.0',
 	'constraints' => array(
 		'depends' => array(
-			'oelib' => '',
+			'php' => '5.2.0-0.0.0',
+			'typo3' => '4.2.0-0.0.0',
+			'oelib' => '0.6-0',
 		),
 		'conflicts' => array(
 		),
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:9:{s:9:"ChangeLog";s:4:"34ad";s:12:"ext_icon.gif";s:4:"1bdc";s:17:"ext_localconf.php";s:4:"a6b3";s:14:"ext_tables.php";s:4:"74f0";s:16:"locallang_db.xml";s:4:"4e18";s:19:"doc/wizard_form.dat";s:4:"e58e";s:20:"doc/wizard_form.html";s:4:"ab98";s:33:"pi1/class.tx_felogindebug_pi1.php";s:4:"4719";s:17:"pi1/locallang.xml";s:4:"fe13";}',
+	'_md5_values_when_last_written' => 'a:7:{s:9:"ChangeLog";s:4:"34ad";s:12:"ext_icon.gif";s:4:"1bdc";s:17:"ext_localconf.php";s:4:"5321";s:14:"ext_tables.php";s:4:"e6c8";s:16:"locallang_db.xml";s:4:"4e18";s:33:"pi1/class.tx_felogindebug_pi1.php";s:4:"96ef";s:17:"pi1/locallang.xml";s:4:"7728";}',
+	'suggests' => array(
+	),
 );
 
 ?>

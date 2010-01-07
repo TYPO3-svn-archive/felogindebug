@@ -11,5 +11,5 @@ t3lib_extMgm::addPlugin(array(
 	'LLL:EXT:felogindebug/locallang_db.xml:tt_content.list_type_pi1',
 	$_EXTKEY . '_pi1',
 	t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon.gif'
-),'list_type');
+), 'list_type');
 ?>

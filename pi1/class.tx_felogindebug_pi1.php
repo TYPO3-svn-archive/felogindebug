@@ -21,45 +21,60 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-/**
- * [CLASS/FUNCTION INDEX of SCRIPT]
- *
- * Hint: use extdeveval to insert/update function index above.
- */
 
-require_once(PATH_tslib.'class.tslib_pibase.php');
-
+require_once(PATH_tslib . 'class.tslib_pibase.php');
 
 /**
- * Plugin 'FE Login Debugger' for the 'felogindebug' extension.
+ * Plugin 'FE Login Debugger' for the "felogindebug" extension.
  *
  * @author	Oliver Klee <typo3-coding@oliverklee.de>
+ *
  * @package	TYPO3
  * @subpackage	tx_felogindebug
  */
 class tx_felogindebug_pi1 extends tslib_pibase {
-	var $prefixId      = 'tx_felogindebug_pi1';		// Same as class name
-	var $scriptRelPath = 'pi1/class.tx_felogindebug_pi1.php';	// Path to this script relative to the extension dir.
-	var $extKey        = 'felogindebug';	// The extension key.
-	
 	/**
-	 * The main method of the PlugIn
+	 * same as class name
 	 *
-	 * @param	string		$content: The PlugIn content
-	 * @param	array		$conf: The PlugIn configuration
-	 * @return	The content that is displayed on the website
+	 * @var string
 	 */
-	function main($content, $conf) {
-		$this->conf = $conf;
+	public $prefixId  = 'tx_felogindebug_pi1';
+
+	/**
+	 * path to this script relative to the extension dir
+	 *
+	 * @var string
+	 */
+	public $scriptRelPath = 'pi1/class.tx_felogindebug_pi1.php';
+
+	/**
+	 * the extension key
+	 *
+	 * @var string
+	 */
+	public $extKey = 'felogindebug';
+
+	/**
+	 * makes sure that caching is not expected
+	 *
+	 * @var boolean
+	 */
+	public $pi_USER_INT_obj = true;
+
+	/**
+	 * Creates the plugin's HTML output.
+	 *
+	 * @return string the plugin's HTML output, will not be empty
+	 */
+	public function main() {
 		$this->pi_setPiVarDefaults();
 		$this->pi_loadLL();
-		$this->pi_USER_INT_obj = 1;	// Configuring so caching is not expected. This value means that no cHash params are ever set. We do this, because it's a USER_INT object!
-	
+
 		$content='
 			<strong>This is a few paragraphs:</strong><br />
 			<p>This is line 1</p>
 			<p>This is line 2</p>
-	
+
 			<h3>This is a form:</h3>
 			<form action="'.$this->pi_getPageLink($GLOBALS['TSFE']->id).'" method="POST">
 				<input type="text" name="'.$this->prefixId.'[input_field]" value="'.htmlspecialchars($this->piVars['input_field']).'">
@@ -68,15 +83,12 @@ class tx_felogindebug_pi1 extends tslib_pibase {
 			<br />
 			<p>You can click here to '.$this->pi_linkToPage('get to this page again',$GLOBALS['TSFE']->id).'</p>
 		';
-	
+
 		return $this->pi_wrapInBaseClass($content);
 	}
 }
 
-
-
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/felogindebug/pi1/class.tx_felogindebug_pi1.php'])	{
 	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/felogindebug/pi1/class.tx_felogindebug_pi1.php']);
 }
-
 ?>
