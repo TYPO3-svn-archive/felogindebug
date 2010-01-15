@@ -146,7 +146,7 @@ class tx_felogindebug_pi1 extends tx_oelib_templatehelper {
 	 * @return the HTML row with the label and data htmlspecialchared
 	 */
 	protected function createRow($label, $data) {
-		return '<tr><th>' . htmlspecialchars($label) . '</th><td>' .
+		return '<tr><th style="text-align: left;">' . htmlspecialchars($label) . '</th><td>' .
 			htmlspecialchars($data) . '</td></tr>';
 	}
 }
