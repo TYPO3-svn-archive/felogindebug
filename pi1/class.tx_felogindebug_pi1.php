@@ -104,6 +104,32 @@ class tx_felogindebug_pi1 extends tx_oelib_templatehelper {
 				'FE User UID',
 				tx_oelib_FrontEndLoginManager::getLoggedInUser()->getUid()
 			);
+			if (is_array($GLOBALS['TSFE']->fe_user->uc)) {
+				$result .= $this->createRow(
+					'$TSFE->fe_user->uc',
+					count($GLOBALS['TSFE']->fe_user->uc) . ' entries'
+				);
+				foreach ($GLOBALS['TSFE']->fe_user->uc as $key => $value) {
+					$result .= $this->createRow(
+						'...->uc[' . $key . ']', $value
+					);
+				}
+			} else {
+				$result .= $this->createRow(
+					'$TSFE->fe_user->uc',
+					'(not set)'
+				);
+			}
+		}
+
+		$result .= $this->createRow(
+			'$TSFE->fe_user->sesData',
+			count($GLOBALS['TSFE']->fe_user->sesData) . ' entries'
+		);
+		foreach ($GLOBALS['TSFE']->fe_user->sesData as $key => $value) {
+			$result .= $this->createRow(
+				'...->sesData[' . $key . ']', $value
+			);
 		}
 
 		$result .= '</tbody></table></div>';
