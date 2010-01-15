@@ -3,7 +3,7 @@
 ########################################################################
 # Extension Manager/Repository config file for ext "felogindebug".
 #
-# Auto generated 07-01-2010 15:41
+# Auto generated 15-01-2010 19:34
 #
 # Manual updates:
 # Only the data in the array - everything else is removed by next
@@ -41,7 +41,7 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:7:{s:9:"ChangeLog";s:4:"34ad";s:12:"ext_icon.gif";s:4:"1bdc";s:17:"ext_localconf.php";s:4:"5321";s:14:"ext_tables.php";s:4:"e6c8";s:16:"locallang_db.xml";s:4:"0878";s:33:"pi1/class.tx_felogindebug_pi1.php";s:4:"e2ff";s:17:"pi1/locallang.xml";s:4:"f4d9";}',
+	'_md5_values_when_last_written' => 'a:7:{s:9:"ChangeLog";s:4:"4268";s:12:"ext_icon.gif";s:4:"1bdc";s:17:"ext_localconf.php";s:4:"5321";s:14:"ext_tables.php";s:4:"e6c8";s:16:"locallang_db.xml";s:4:"0878";s:33:"pi1/class.tx_felogindebug_pi1.php";s:4:"1f7e";s:17:"pi1/locallang.xml";s:4:"f4d9";}',
 	'suggests' => array(
 	),
 );
