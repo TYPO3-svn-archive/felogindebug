@@ -1,7 +1,8 @@
 2010-01-15 Oliver Klee  <typo3-coding@oliverklee.de>
+- [#3729] Change: Provide ext_autoload for our extensions
 
-	* display the session data
+2010-01-15 Oliver Klee  <typo3-coding@oliverklee.de>
+- display the session data
 
 2010-01-07 Oliver Klee  <typo3-coding@oliverklee.de>
-
-	* initial code generated with kickstarter
+- initial code generated with kickstarter
